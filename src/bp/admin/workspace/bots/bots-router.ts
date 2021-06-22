@@ -133,7 +133,7 @@ class BotsRouter extends CustomAdminRouter {
 
     router.post(
       '/:botId/stage',
-      this.assertBotpressPro,
+      // this.assertBotpressPro,
       this.needPermissions('write', this.resource),
       this.asyncMiddleware(async (req, res) => {
         try {
@@ -148,7 +148,7 @@ class BotsRouter extends CustomAdminRouter {
 
     router.post(
       '/:botId/approve-stage',
-      this.assertBotpressPro,
+      // this.assertBotpressPro,
       this.needPermissions('write', this.resource),
       this.asyncMiddleware(async (req, res) => {
         try {

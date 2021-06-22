@@ -56,9 +56,9 @@ export class StrategyBasic {
       this.asyncMiddleware(async (req: RequestWithUser, res) => {
         const { strategyId } = req.params
 
-        if (!(await this.authService.isFirstUser())) {
-          return res.status(403).send('Registration is disabled')
-        }
+        // if (!(await this.authService.isFirstUser())) {
+        //   return res.status(403).send('Registration is disabled')
+        // }
 
         const { email, password } = req.body
         if (email.length < 4 || password.length < 4) {

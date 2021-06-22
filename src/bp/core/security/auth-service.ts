@@ -153,12 +153,21 @@ export class AuthService {
       email: user.email,
       strategy,
       tokenVersion: 1,
-      attributes: { ...(user.attributes || {}), created_at: new Date() }
+      password: user.password,
+      salt: user.salt,
+      attributes: user.attributes || {}
     })
 
-    if (_.get(await this.getStrategy(strategy), 'type') === 'basic') {
-      return this.strategyBasic.resetPassword(user.email, strategy)
-    }
+    // const createdUser = await this.users.createUser({
+    //   email: user.email,
+    //   strategy,
+    //   tokenVersion: 1,
+    //   attributes: { ...(user.attributes || {}), created_at: new Date() }
+    // })
+
+    // if (_.get(await this.getStrategy(strategy), 'type') === 'basic') {
+    //   return this.strategyBasic.resetPassword(user.email, strategy)
+    // }
 
     return createdUser.result
   }
