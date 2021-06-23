@@ -10,23 +10,25 @@ const promisify = require('util').promisify
 const execAsync = promisify(exec)
 
 const getTargetOSNodeVersion = () => {
-  if (process.argv.find(x => x.toLowerCase() === '--win32')) {
-    return 'node12-win32-x64'
-  } else if (process.argv.find(x => x.toLowerCase() === '--linux')) {
-    return 'node12-linux-x64'
-  } else {
-    return 'node12-macos-x64'
-  }
+  return 'node12-linux-x64'
+  // if (process.argv.find(x => x.toLowerCase() === '--win32')) {
+  //   return 'node12-win32-x64'
+  // } else if (process.argv.find(x => x.toLowerCase() === '--linux')) {
+  //   return 'node12-linux-x64'
+  // } else {
+  //   return 'node12-macos-x64'
+  // }
 }
 
 const getTargetOSName = () => {
-  if (process.argv.find(x => x.toLowerCase() === '--win32')) {
-    return 'windows'
-  } else if (process.argv.find(x => x.toLowerCase() === '--linux')) {
-    return 'linux'
-  } else {
-    return 'darwin'
-  }
+  return 'linux'
+  // if (process.argv.find(x => x.toLowerCase() === '--win32')) {
+  //   return 'windows'
+  // } else if (process.argv.find(x => x.toLowerCase() === '--linux')) {
+  //   return 'linux'
+  // } else {
+  //   return 'darwin'
+  // }
 }
 
 const packageApp = async () => {

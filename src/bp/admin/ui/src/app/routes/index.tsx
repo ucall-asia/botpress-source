@@ -32,7 +32,7 @@ import { extractCookie } from './cookies'
 import PrivateRoute from './PrivateRoute'
 
 const setupBranding = () => {
-  window.document.title = window.APP_NAME || 'Botpress Admin Panel'
+  window.document.title = window.APP_NAME || 'Ucall Bot Admin Panel'
 
   if (window.APP_FAVICON) {
     const link = document.querySelector('link[rel="icon"]')

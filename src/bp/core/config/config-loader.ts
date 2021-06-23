@@ -242,12 +242,12 @@ export class ConfigProvider {
   public async getBrandingConfig(appName: 'admin' | 'studio') {
     const defaultConfig = {
       admin: {
-        title: 'Botpress Admin Panel',
+        title: 'Ucall Bot Admin Panel',
         favicon: 'assets/admin/ui/public/favicon.ico',
         customCss: ''
       },
       studio: {
-        title: 'Botpress Studio',
+        title: 'Ucall Bot Studio',
         favicon: 'assets/studio/ui/public/img/favicon.png',
         customCss: ''
       }
