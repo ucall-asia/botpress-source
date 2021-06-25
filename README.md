@@ -1,3 +1,24 @@
+# uCall Hướng Dẫn Build
+
+## Cài đặt môi trường mặc định
+``` bash 
+$ sudo apt update 
+$ sudo apt install -y gnupg curl git build-essential cmake pkg-config
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+$ source ~/.bashrc
+$ nvm install v12.18.1
+$ npm install -g yarn
+```
+
+## Build Pipeline 
+``` bash 
+$ yarn 
+$ yarn build 
+$ yarn start
+$ yarn package
+```
+
+
 # [Botpress](https://botpress.com/?utm_source=github&utm_medium=organic&utm_campaign=botpress_repo&utm_term=readme) — The building blocks for building chatbots
 
 ## What is Botpress ?

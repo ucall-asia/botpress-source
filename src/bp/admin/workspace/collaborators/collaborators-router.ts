@@ -55,7 +55,7 @@ class CollaboratorsRouter extends CustomAdminRouter {
 
     router.post(
       '/workspace/add',
-      this.assertBotpressPro,
+      // this.assertBotpressPro,
       this.needPermissions('write', this.resource),
       this.asyncMiddleware(async (req, res) => {
         const { strategy, role } = req.body
@@ -105,7 +105,7 @@ class CollaboratorsRouter extends CustomAdminRouter {
 
     router.post(
       '/',
-      this.assertBotpressPro,
+      // this.assertBotpressPro,
       this.needPermissions('write', this.resource),
       this.asyncMiddleware(async (req, res) => {
         validateBodySchema(

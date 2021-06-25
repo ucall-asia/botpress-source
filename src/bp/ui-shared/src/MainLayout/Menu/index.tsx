@@ -18,8 +18,10 @@ const Menu: FC<MenuProps> = ({ items, className }) => {
     </li>
   )
 
+  const pathname = window.location.pathname
+
   return (
-    <aside className={cx(style.sidebar, className, 'bp-sidebar')}>
+    <aside className={cx(style.sidebar, className, 'bp-sidebar')} hidden={pathname.includes("studio")}>
       <a href="admin/" className={cx(style.logo, 'bp-logo')}>
         <img width="19" src="assets/ui-studio/public/img/logo-icon.svg" alt="Botpress Logo" />
       </a>

@@ -94,8 +94,10 @@ const Sidebar: FC<Props> = props => {
     </AccessControl>
   )
 
+  const pathname = window.location.pathname
+
   return (
-    <aside className={classnames(style.sidebar, 'bp-sidebar')}>
+    <aside className={classnames(style.sidebar, 'bp-sidebar')} hidden={pathname.includes("studio")}>
       <a href="admin/" className={classnames(style.logo, 'bp-logo')}>
         <img width="19" src="assets/ui-studio/public/img/logo-icon.svg" alt="Botpress Logo" />
       </a>

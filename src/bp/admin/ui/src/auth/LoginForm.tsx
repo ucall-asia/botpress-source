@@ -1,19 +1,23 @@
 import { Button, FormGroup, InputGroup, Intent } from '@blueprintjs/core'
 import { lang } from 'botpress/shared'
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 interface Props {
   onLogin: (email, password) => void
 }
 
 export const LoginForm: FC<Props> = props => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('admin')
+  const [password, setPassword] = useState('admin')
 
   const onSubmit = e => {
     e.preventDefault()
     props.onLogin(email, password)
   }
+
+  useEffect(() => {
+    props.onLogin(email, password);
+  }, [])
 
   return (
     <form onSubmit={onSubmit}>
