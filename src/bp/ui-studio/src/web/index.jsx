@@ -37,22 +37,23 @@ require('storm-react-diagrams/dist/style.min.css')
 require('./theme.scss')
 
 const token = auth.getToken()
-if (token) {
-  if (window.USE_JWT_COOKIES) {
-    axios.defaults.headers.common[CSRF_TOKEN_HEADER] = token
-  } else {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-  }
 
-  axios.defaults.headers.common['X-BP-Workspace'] = window.WORKSPACE_ID
-}
-
-if (!window.BOT_ID) {
-  console.error(`This bot doesn't exist. Redirecting to admin `)
-  window.location.href = `${window.ROOT_PATH}/admin`
-} else {
+axios.post(`/api/v1/auth/login/basic/default`, {'email': 'admin', password: 'admin'}, { timeout: 15000 }).then((response) => {
+  axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.payload.jwt}`
+  // if (token) {
+  //   if (window.USE_JWT_COOKIES) {
+  //     axios.defaults.headers.common[CSRF_TOKEN_HEADER] = token
+  //   } else {
+  //     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+  //   }
+  
+  //   axios.defaults.headers.common['X-BP-Workspace'] = window.WORKSPACE_ID
+  // }
+  
+  // console.log('ucall ahihi')
+  
   initializeTranslations()
-
+  
   // Do not use "import App from ..." as hoisting will screw up styling
   const App = require('./components/App').default
 
@@ -64,6 +65,7 @@ if (!window.BOT_ID) {
     </Provider>,
     document.getElementById('app')
   )
-}
-
-telemetry.startFallback(axios.create({ baseURL: window.API_PATH })).catch()
+  
+  telemetry.startFallback(axios.create({ baseURL: window.API_PATH })).catch()
+  
+})

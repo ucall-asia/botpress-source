@@ -18,6 +18,23 @@ $ yarn start
 $ yarn package
 ```
 
+## Cài đặt Docker
+``` bash 
+docker run -dit --name botpress -v 3000-3005:3000:3005 ubuntu:20.04 bash
+sudo apt update 
+sudo apt upgrade
+sudo apt install -y gnupg curl git build-essential cmake pkg-config
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+source ~/.bashrc
+nvm install v12.18.1
+npm install -g yarn
+
+yarn 
+yarn build 
+yarn start
+yarn package
+```
+
 
 # [Botpress](https://botpress.com/?utm_source=github&utm_medium=organic&utm_campaign=botpress_repo&utm_term=readme) — The building blocks for building chatbots
 

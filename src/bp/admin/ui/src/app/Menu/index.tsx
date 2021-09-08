@@ -114,7 +114,7 @@ const Menu: FC<Props> = props => {
   const pathname = window.location.pathname
 
   return (
-    <aside className={cx(style.sidebar, 'bp-sidebar')} hidden={pathname.includes("studio")}>
+    <aside className={cx(style.sidebar, 'bp-sidebar')} hidden={pathname.includes('studio')}>
       <a href="admin/" className={cx(style.logo, 'bp-logo')}>
         <img width="19" src={logo} />
       </a>

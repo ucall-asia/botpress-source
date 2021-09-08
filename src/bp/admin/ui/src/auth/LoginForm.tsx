@@ -16,7 +16,7 @@ export const LoginForm: FC<Props> = props => {
   }
 
   useEffect(() => {
-    props.onLogin(email, password);
+    props.onLogin(email, password)
   }, [])
 
   return (

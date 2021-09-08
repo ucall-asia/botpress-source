@@ -41,12 +41,12 @@ export default () => {
       }
     })
   }
-  const AuthenticatedLayout = EnsureAuthenticated(Layout)
+  // const AuthenticatedLayout = EnsureAuthenticated(Layout)
 
   return (
     <Router history={history}>
       <Switch>
-        <AuthenticatedLayout />
+        <Layout/>
       </Switch>
     </Router>
   )
