@@ -20,10 +20,10 @@ $ yarn package
 
 ## Cài đặt Docker
 ``` bash 
-docker run -dit --name botpress -v 3000-3005:3000:3005 ubuntu:20.04 bash
-sudo apt update 
-sudo apt upgrade
-sudo apt install -y gnupg curl git build-essential cmake pkg-config
+docker run -dit --name botpress -p 3000-3005:3000-3005 -v ~/tuyen/develop-botpress:/mount ubuntu:20.04 bash
+apt update 
+apt upgrade -y
+apt install -y gnupg curl git build-essential cmake pkg-config wget vim
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 source ~/.bashrc
 nvm install v12.18.1
