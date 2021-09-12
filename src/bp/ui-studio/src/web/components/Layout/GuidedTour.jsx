@@ -1,7 +1,7 @@
+import { Button } from '@blueprintjs/core'
 import React from 'react'
 import Tour from 'reactour'
 import storage from '../../util/storage'
-import { Button } from '@blueprintjs/core'
 
 // Change this key to display the tour the next time a user opens Botpress
 const TOUR_KEY = 'guidedTour11_9_0'
@@ -22,30 +22,21 @@ export default class GuidedTour extends React.Component {
     const steps = [
       {
         selector: '',
-        content: 'Welcome to Botpress! This is a quick tour of the most important features.'
+        content: 'Chào mừng tới tới Ucall Builder! Sau đây là hướng dẫn cơ bản về cách sử dụng Ucall Builder để xây dựng kịch bản.'
       },
       {
-        selector: '#bp-menu_qna',
-        content: 'The QnA module is great for easily adding knowledge to you bot as "Question & Answer" pairs.'
-      },
-      {
-        selector: '#bp-menu_nlu',
+        selector: '#main',
         content:
-          'The "Understanding" screen will allow you to understand more complex user queries (Intents) and extract structured information (Entities).'
-      },
-      {
-        selector: '#bp-menu_Flows',
-        content:
-          'The "Flows" screen is the main interface. Using this tool, you can go beyond static responses by designing more complex, multi-turn dialogs.'
+          'Màn hình "Flows" là giao diện chính. Sử dụng công cụ này, bạn có thể thiết các phản hồi bằng cách thiết kế các hộp thoại để ấn định nội dung giao tiếp.'
       },
       {
         selector: '#statusbar_emulator',
         content:
-          'When making changes to your bot, you will use the Emulator to chat with your bot and debug your conversations.'
+          'Sau khi chỉnh sửa kịch bản, ban có thể sử dụng "Giả lập Bot" này để kiểm tra bản chỉnh sửa của bot.'
       },
       {
-        selector: '#statusbar_switchbot',
-        content: 'Finally, this button will allow you to return to the administration panel or switch bot.'
+        selector: '',
+        content: 'Chúc mừng bạn đã tìm hiểu hết các tính năng của Ucall Builder. Giờ cùng thử trải nghiệm nào!'
       }
     ]
 

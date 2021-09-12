@@ -27,7 +27,7 @@ const Toolbar: FC<Props> = props => {
   return (
     <header className={style.toolbar}>
       <div className={style.list}>
-        {!!hasDoc && (
+        {/* {!!hasDoc && (
           <Fragment>
             <Tooltip
               content={
@@ -39,14 +39,14 @@ const Toolbar: FC<Props> = props => {
                 </div>
               }
             >
-              <button className={style.item} onClick={toggleDocs}>
+              <button className={style.item} onClick={toggleDocs} hidden>
                 <Icon color="#1a1e22" icon="help" iconSize={16} />
               </button>
             </Tooltip>
             <span className={style.divider}></span>
           </Fragment>
-        )}
-        <AccessControl resource="bot.logs" operation="read">
+        )} */}
+        {/* <AccessControl resource="bot.logs" operation="read">
           <Tooltip
             content={
               <div className={style.tooltip}>
@@ -61,10 +61,11 @@ const Toolbar: FC<Props> = props => {
               <Icon color="#1a1e22" icon="console" iconSize={16} />
             </button>
           </Tooltip>
-        </AccessControl>
+        </AccessControl> */}
         {window.IS_BOT_MOUNTED && (
           <Tooltip content={<ShortcutLabel light shortcut="emulator-focus" />}>
             <button
+              id="statusbar_emulator"
               className={classNames(style.item, style.itemSpacing, { [style.active]: isEmulatorOpen })}
               onClick={onToggleEmulator}
             >
